@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="MEDICO Doctor Appointments" />
+
+    <title>Appointments | MEDICO Doctor Portal</title>
+
+    <link rel="stylesheet" href="/css/doctor.css" />
+  </head>
+
+  <body class="doctor-dashboard-page">
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="doctor-sidebar">
+      <a href="/index.html" class="doctor-logo"> <span>MED</span>ICO </a>
+
+      <div class="doctor-sidebar-label">DOCTOR PORTAL</div>
+
+      <nav class="doctor-navigation">
+        <a href="/pages/doctors/doctor-dashboard.html">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/doctors/doctor-appointments.html" class="active">
+          <span>02</span>
+          Appointments
+        </a>
+
+        <a href="/pages/doctors/doctor-schedule.html">
+          <span>03</span>
+          Schedule
+        </a>
+
+        <a href="/pages/doctors/doctor-profile.html">
+          <span>04</span>
+          My Profile
+        </a>
+      </nav>
+
+      <button type="button" id="doctorLogoutButton" class="doctor-logout">
+        <span>↪</span>
+
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="doctor-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="doctor-dashboard-header">
+        <div>
+          <div class="doctor-dashboard-label">MEDICO • DOCTOR PORTAL</div>
+
+          <h1>Appointments</h1>
+        </div>
+
+        <div class="doctor-header-profile">
+          <div class="doctor-avatar">DR</div>
+
+          <div>
+            <strong id="doctorName"> Doctor </strong>
+
+            <span id="doctorSpecialization"> Medical Professional </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- =========================================
+             MESSAGE
+        ========================================== -->
+
+      <div
+        id="appointmentMessage"
+        class="doctor-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- =========================================
+             FILTER BAR
+        ========================================== -->
+
+      <section class="doctor-panel-card">
+        <div class="appointment-toolbar">
+          <div>
+            <span class="panel-section-label"> PATIENT BOOKINGS </span>
+
+            <h2 class="appointment-page-title">Manage appointments</h2>
+          </div>
+
+          <div class="appointment-filters">
+            <button
+              type="button"
+              class="appointment-filter active"
+              data-filter="all"
+            >
+              All
+            </button>
+
+            <button
+              type="button"
+              class="appointment-filter"
+              data-filter="pending"
+            >
+              Pending
+            </button>
+
+            <button
+              type="button"
+              class="appointment-filter"
+              data-filter="confirmed"
+            >
+              Confirmed
+            </button>
+
+            <button
+              type="button"
+              class="appointment-filter"
+              data-filter="completed"
+            >
+              Completed
+            </button>
+
+            <button
+              type="button"
+              class="appointment-filter"
+              data-filter="rejected"
+            >
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- =====================================
+                 APPOINTMENT LIST
+            ====================================== -->
+
+        <div id="appointmentsContainer" class="doctor-full-appointments">
+          <div class="appointment-loading">
+            <div class="loading-circle"></div>
+
+            <p>Loading appointments...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/doctor/doctor-appointments.js"></script>
+  </body>
+</html>

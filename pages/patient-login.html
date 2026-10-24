@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MEDICO Patient Portal Login" />
+    <title>Patient Login | MEDICO</title>
+    <link rel="stylesheet" href="/css/patient-login.css" />
+  </head>
+
+  <body class="patient-login-page">
+    <main class="patient-login-wrapper">
+      <section class="patient-login-intro">
+        <div class="patient-intro-overlay"></div>
+
+        <div class="patient-intro-content">
+          <a href="/index.html" class="patient-logo"> <span>MED</span>ICO </a>
+
+          <div class="patient-portal-label">
+            MEDICO
+            <span></span>
+            PATIENT PORTAL
+          </div>
+
+          <div class="patient-intro-text">
+            <p class="intro-small">PERSONALIZED HEALTHCARE WORKSPACE</p>
+
+            <h1>
+              Your health.
+              <br />
+              <span>Your care.</span>
+              <br />
+              One workspace.
+            </h1>
+
+            <p class="intro-description">
+              Securely manage appointments, connect with your doctors and keep
+              your healthcare journey organized from one private workspace.
+            </p>
+          </div>
+
+          <div class="patient-intro-footer">
+            <div class="intro-line"></div>
+            <span> SECURE • PRIVATE • PERSONAL </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="patient-login-section">
+        <div class="patient-login-card">
+          <div class="login-card-header">
+            <div class="login-eyebrow">PATIENT PORTAL</div>
+            <h2>Welcome back</h2>
+            <p>Sign in to manage your appointments and healthcare.</p>
+          </div>
+
+          <form id="patientLoginForm" class="patient-login-form" novalidate>
+            <div class="form-group">
+              <label for="patientEmail">Email address</label>
+
+              <div class="input-wrapper">
+                <span class="input-icon">@</span>
+                <input
+                  type="email"
+                  id="patientEmail"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="password-label-row">
+                <label for="patientPassword">Password</label>
+
+                <button
+                  type="button"
+                  id="forgotPatientPasswordButton"
+                  class="forgot-password"
+                >
+                  Forgot password?
+                </button>
+              </div>
+
+              <div class="input-wrapper">
+                <span class="input-icon">•</span>
+                <input
+                  type="password"
+                  id="patientPassword"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  id="togglePatientPassword"
+                  class="password-toggle"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+
+            <label class="remember-row">
+              <input type="checkbox" id="rememberPatient" name="remember" />
+              <span class="custom-checkbox"></span>
+              <span>Remember me</span>
+            </label>
+
+            <div
+              id="patientLoginMessage"
+              class="login-message"
+              aria-live="polite"
+            ></div>
+
+            <button
+              type="submit"
+              id="patientLoginButton"
+              class="patient-login-button"
+            >
+              <span>Sign in</span>
+              <strong>→</strong>
+            </button>
+          </form>
+
+          <p class="patient-register-link">
+            Don't have an account?
+            <a href="/pages/register.html">Create one</a>
+          </p>
+
+          <div class="login-card-footer">
+            <a href="/index.html" class="back-to-medico">
+              <span>←</span>
+              Back to MEDICO
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/patient-login.js"></script>
+  </body>
+</html>

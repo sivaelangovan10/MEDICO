@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="MEDICO Doctor Schedule" />
+
+    <title>Schedule | MEDICO Doctor Portal</title>
+
+    <link rel="stylesheet" href="/css/doctor.css" />
+  </head>
+
+  <body class="doctor-dashboard-page">
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="doctor-sidebar">
+      <a href="/index.html" class="doctor-logo"> <span>MED</span>ICO </a>
+
+      <div class="doctor-sidebar-label">DOCTOR PORTAL</div>
+
+      <nav class="doctor-navigation">
+        <a href="/pages/doctors/doctor-dashboard.html">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/doctors/doctor-appointments.html">
+          <span>02</span>
+          Appointments
+        </a>
+
+        <a href="/pages/doctors/doctor-schedule.html" class="active">
+          <span>03</span>
+          Schedule
+        </a>
+
+        <a href="/pages/doctors/doctor-profile.html">
+          <span>04</span>
+          My Profile
+        </a>
+      </nav>
+
+      <button type="button" id="doctorLogoutButton" class="doctor-logout">
+        <span>↪</span>
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="doctor-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="doctor-dashboard-header">
+        <div>
+          <div class="doctor-dashboard-label">MEDICO • DOCTOR PORTAL</div>
+
+          <h1>Schedule</h1>
+        </div>
+
+        <div class="doctor-header-profile">
+          <div class="doctor-avatar">DR</div>
+
+          <div>
+            <strong id="doctorName"> Doctor </strong>
+
+            <span id="doctorSpecialization"> Medical Professional </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MESSAGE -->
+
+      <div
+        id="scheduleMessage"
+        class="doctor-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- =========================================
+             SCHEDULE SETTINGS
+        ========================================== -->
+
+      <section class="doctor-panel-card">
+        <div class="schedule-header">
+          <div>
+            <span class="panel-section-label"> AVAILABILITY </span>
+
+            <h2 class="appointment-page-title">Working schedule</h2>
+
+            <p class="schedule-description">
+              Configure the days and hours during which patients can request
+              appointments.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            id="saveScheduleButton"
+            class="schedule-save-button"
+          >
+            Save schedule
+          </button>
+        </div>
+
+        <!-- =====================================
+                 WEEKLY SCHEDULE
+            ====================================== -->
+
+        <div id="weeklySchedule" class="weekly-schedule">
+          <!-- MONDAY -->
+
+          <div class="schedule-day" data-day="monday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Monday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- TUESDAY -->
+
+          <div class="schedule-day" data-day="tuesday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Tuesday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- WEDNESDAY -->
+
+          <div class="schedule-day" data-day="wednesday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Wednesday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- THURSDAY -->
+
+          <div class="schedule-day" data-day="thursday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Thursday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- FRIDAY -->
+
+          <div class="schedule-day" data-day="friday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Friday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- SATURDAY -->
+
+          <div class="schedule-day" data-day="saturday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Saturday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+
+          <!-- SUNDAY -->
+
+          <div class="schedule-day" data-day="sunday">
+            <div class="schedule-day-name">
+              <input type="checkbox" class="schedule-enabled" />
+
+              <strong> Sunday </strong>
+            </div>
+
+            <div class="schedule-time-group">
+              <label>
+                Start
+                <input type="time" class="schedule-start" />
+              </label>
+
+              <span> — </span>
+
+              <label>
+                End
+                <input type="time" class="schedule-end" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+             CURRENT AVAILABILITY
+        ========================================== -->
+
+      <section class="doctor-panel-card schedule-summary-card">
+        <div class="panel-card-header">
+          <div>
+            <span> PATIENT BOOKING </span>
+
+            <h2>Availability status</h2>
+          </div>
+        </div>
+
+        <div class="schedule-summary">
+          <div class="schedule-summary-icon">✓</div>
+
+          <div>
+            <strong id="scheduleStatus"> Not configured </strong>
+
+            <p id="scheduleSummaryText">
+              Your availability will appear here after your schedule is saved.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/doctor/doctor-schedule.js"></script>
+  </body>
+</html>

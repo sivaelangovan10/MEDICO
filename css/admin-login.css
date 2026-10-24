@@ -1,0 +1,394 @@
+:root {
+    --bg: #edf1f2;
+    --surface: #f8faf9;
+    --card: #ffffff;
+    --blue: #123b5d;
+    --blue-dark: #092b45;
+    --blue-light: #dce8ef;
+    --text: #172b3a;
+    --muted: #71808c;
+    --border: #d9e2e6;
+    --danger: #a84a4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(18, 59, 93, 0.08),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.admin-login-wrapper {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.admin-login-brand {
+    min-height: 100vh;
+
+    padding: 55px 8%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            145deg,
+            #123b5d,
+            #0a2b45
+        );
+
+    color: #ffffff;
+}
+
+.admin-logo {
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.admin-logo span {
+    color: #8eb8ce;
+}
+
+.admin-brand-content {
+    max-width: 620px;
+
+    margin-bottom: 10vh;
+}
+
+.admin-brand-content > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #9bb8c8;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.admin-brand-content h1 {
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(38px, 5vw, 70px);
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+}
+
+.admin-brand-content p {
+    max-width: 500px;
+
+    color: #bdcdd6;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.admin-login-card {
+    align-self: center;
+
+    width: min(500px, 88%);
+
+    margin: auto;
+
+    padding: 45px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(18, 59, 93, 0.12);
+}
+
+.admin-login-heading {
+    margin-bottom: 35px;
+}
+
+.admin-login-heading > span {
+    color: var(--blue);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+.admin-login-heading h2 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+
+    color: var(--blue-dark);
+
+    font-size: 34px;
+}
+
+.admin-login-heading p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.admin-form-group {
+    margin-bottom: 22px;
+}
+
+.admin-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-form-group input {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #f8faf9;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.admin-form-group input:focus {
+    border-color: var(--blue);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(18, 59, 93, 0.08);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.admin-login-message {
+    min-height: 20px;
+
+    margin-bottom: 12px;
+
+    color: var(--danger);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.admin-login-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: var(--blue);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-login-button:hover {
+    background: var(--blue-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(18, 59, 93, 0.18);
+}
+
+.admin-login-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   BACK HOME
+========================================= */
+
+.back-home {
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    text-align: center;
+
+    transition: color 0.2s ease;
+}
+
+.back-home:hover {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .admin-login-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-login-brand {
+        min-height: auto;
+
+        padding: 35px 8%;
+    }
+
+    .admin-brand-content {
+        margin-top: 90px;
+        margin-bottom: 50px;
+    }
+
+    .admin-brand-content h1 {
+        font-size: 44px;
+    }
+
+    .admin-login-card {
+        margin: 45px auto;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .admin-login-brand {
+        padding: 28px 22px;
+    }
+
+    .admin-brand-content {
+        margin-top: 65px;
+    }
+
+    .admin-brand-content h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .admin-brand-content p {
+        font-size: 13px;
+    }
+
+    .admin-login-card {
+        width: calc(100% - 30px);
+
+        padding: 28px 22px;
+
+        margin: 25px auto 35px;
+    }
+
+    .admin-login-heading h2 {
+        font-size: 29px;
+    }
+}

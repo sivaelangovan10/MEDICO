@@ -1,0 +1,932 @@
+/* =========================================
+   MEDICO — ADMIN ADD DOCTOR
+   ========================================= */
+
+:root {
+    --navy-950: #06111d;
+    --navy-900: #091827;
+    --navy-850: #0d1e2e;
+    --navy-800: #12283a;
+
+    --cyan: #55c8d8;
+    --cyan-light: #8ce3eb;
+
+    --white: #f2f7f9;
+    --text: #c9d8df;
+    --muted: #78909d;
+
+    --border: rgba(140, 180, 195, 0.14);
+
+    --input: rgba(255, 255, 255, 0.035);
+
+    --danger: #ef7777;
+    --success: #72d5a0;
+
+    --radius: 16px;
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--white);
+    background: var(--navy-950);
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.add-doctor-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.admin-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 35px 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #091a29,
+            #06111d
+        );
+
+    border-right:
+        1px solid var(--border);
+}
+
+
+.admin-logo {
+    width: fit-content;
+
+    font-size: 27px;
+    font-weight: 850;
+
+    letter-spacing: -1px;
+}
+
+
+.admin-logo span {
+    color: var(--cyan);
+}
+
+
+.admin-portal-label {
+    margin-top: 50px;
+
+    color: var(--cyan);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.admin-navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 22px;
+}
+
+
+.admin-navigation a {
+    padding: 13px 15px;
+
+    border-radius: 9px;
+
+    color: #78909d;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.admin-navigation a:hover {
+    color: var(--white);
+
+    background:
+        rgba(85, 200, 216, .06);
+
+    transform: translateX(3px);
+}
+
+
+.admin-navigation a.active {
+    color: var(--cyan);
+
+    background:
+        rgba(85, 200, 216, .09);
+}
+
+
+/* =========================================
+   LOGOUT
+   ========================================= */
+
+.admin-logout {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid
+        rgba(140, 180, 195, .12);
+
+    border-radius: 9px;
+
+    color: #8196a1;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.admin-logout:hover {
+    color: var(--cyan);
+
+    border-color:
+        rgba(85, 200, 216, .3);
+
+    background:
+        rgba(85, 200, 216, .05);
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.admin-main {
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+
+    margin-left: 250px;
+
+    padding:
+        55px
+        clamp(30px, 6vw, 100px);
+
+    background:
+
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(48, 140, 162, .07),
+            transparent 30%
+        ),
+
+        var(--navy-950);
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.admin-header {
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.page-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--cyan);
+
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 2px;
+}
+
+
+.admin-header h1 {
+    font-size: clamp(34px, 4vw, 54px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.admin-header p {
+    margin-top: 14px;
+
+    max-width: 500px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.back-button {
+    flex-shrink: 0;
+
+    padding: 12px 17px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 9px;
+
+    color: #91a5af;
+
+    background:
+        rgba(255, 255, 255, .02);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.back-button:hover {
+    color: var(--cyan);
+
+    border-color:
+        rgba(85, 200, 216, .35);
+}
+
+
+/* =========================================
+   FORM CARD
+   ========================================= */
+
+.doctor-form-card {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: clamp(25px, 4vw, 45px);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 39, 56, .78),
+            rgba(7, 20, 31, .92)
+        );
+
+    box-shadow:
+        0 30px 70px
+        rgba(0, 0, 0, .22);
+}
+
+
+/* =========================================
+   FORM HEADING
+   ========================================= */
+
+.form-heading {
+    padding-bottom: 30px;
+
+    margin-bottom: 5px;
+
+    border-bottom:
+        1px solid
+        rgba(140, 180, 195, .08);
+}
+
+
+.form-heading > span {
+    color: var(--cyan);
+
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 2px;
+}
+
+
+.form-heading h2 {
+    margin-top: 9px;
+
+    font-size: 25px;
+
+    letter-spacing: -.7px;
+}
+
+
+.form-heading p {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FORM SECTION
+   ========================================= */
+
+.form-section {
+    padding: 35px 0;
+
+    border-bottom:
+        1px solid
+        rgba(140, 180, 195, .08);
+}
+
+
+.section-title {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+
+.section-title > span {
+    display: grid;
+
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(85, 200, 216, .25);
+
+    border-radius: 7px;
+
+    color: var(--cyan);
+
+    background:
+        rgba(85, 200, 216, .05);
+
+    font-size: 9px;
+    font-weight: 850;
+}
+
+
+.section-title h3 {
+    font-size: 15px;
+
+    font-weight: 750;
+}
+
+
+.section-title p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FORM GRID
+   ========================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        22px 20px;
+}
+
+
+.form-group {
+    min-width: 0;
+}
+
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #9bb0ba;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border:
+        1px solid
+        rgba(140, 180, 195, .13);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: var(--input);
+
+    color: var(--white);
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.form-group input {
+    height: 51px;
+
+    padding:
+        0 15px;
+}
+
+
+.form-group textarea {
+    min-height: 145px;
+
+    padding: 14px 15px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #526976;
+}
+
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color:
+        rgba(140, 180, 195, .25);
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color:
+        rgba(85, 200, 216, .65);
+
+    background:
+        rgba(85, 200, 216, .025);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(85, 200, 216, .06);
+}
+
+
+/* =========================================
+   NUMBER INPUT
+   ========================================= */
+
+.form-group input[type="number"] {
+    appearance: textfield;
+}
+
+
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.form-message {
+    min-height: 24px;
+
+    padding-top: 22px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.form-message.error {
+    color: var(--danger);
+}
+
+
+.form-message.success {
+    color: var(--success);
+}
+
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.form-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding-top: 25px;
+}
+
+
+.cancel-button {
+    padding: 13px 19px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 9px;
+
+    color: #8498a3;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    transition: .2s ease;
+}
+
+
+.cancel-button:hover {
+    color: var(--white);
+
+    border-color:
+        rgba(140, 180, 195, .3);
+}
+
+
+.create-doctor-button {
+    min-width: 210px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        0 17px 0 20px;
+
+    border-radius: 9px;
+
+    color: var(--navy-950);
+
+    background: var(--cyan);
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 850;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.create-doctor-button strong {
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+.create-doctor-button:hover {
+    background: var(--cyan-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(85, 200, 216, .14);
+}
+
+
+.create-doctor-button:active {
+    transform: translateY(0);
+}
+
+
+.create-doctor-button:disabled {
+    opacity: .55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 215px;
+    }
+
+
+    .admin-main {
+        width: calc(100% - 215px);
+
+        margin-left: 215px;
+
+        padding:
+            40px 30px;
+    }
+
+
+    .admin-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .back-button {
+        align-self: flex-start;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .add-doctor-page {
+        display: block;
+    }
+
+
+    .admin-sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 22px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+
+    .admin-portal-label {
+        margin-top: 25px;
+    }
+
+
+    .admin-navigation {
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        margin-top: 15px;
+
+        padding-bottom: 4px;
+    }
+
+
+    .admin-navigation a {
+        flex-shrink: 0;
+    }
+
+
+    .admin-logout {
+        width: auto;
+
+        margin-top: 15px;
+    }
+
+
+    .admin-main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            30px 18px 50px;
+    }
+
+
+    .admin-header {
+        margin-bottom: 25px;
+    }
+
+
+    .admin-header h1 {
+        font-size: 38px;
+    }
+
+
+    .doctor-form-card {
+        padding: 24px 19px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+
+    .form-section {
+        padding: 28px 0;
+    }
+
+
+    .form-actions {
+        align-items: stretch;
+
+        flex-direction: column-reverse;
+    }
+
+
+    .cancel-button {
+        text-align: center;
+    }
+
+
+    .create-doctor-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .admin-main {
+        padding:
+            25px 13px 40px;
+    }
+
+
+    .doctor-form-card {
+        padding: 21px 15px;
+    }
+
+
+    .admin-header h1 {
+        font-size: 34px;
+    }
+
+
+    .section-title {
+        gap: 10px;
+    }
+
+
+    .section-title h3 {
+        font-size: 14px;
+    }
+
+}

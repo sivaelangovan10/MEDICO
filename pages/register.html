@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create Account | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body class="auth-page">
+    <main class="auth-container">
+      <!-- =========================================
+             LEFT SIDE
+        ========================================== -->
+
+      <section class="auth-visual">
+        <div class="auth-glow"></div>
+
+        <div class="auth-grid"></div>
+
+        <a href="/index.html" class="logo auth-logo"> <span>MED</span>ICO </a>
+
+        <div class="auth-visual-content">
+          <div class="section-label">JOIN MEDICO</div>
+
+          <h1>
+            Your health,
+            <span>our priority.</span>
+          </h1>
+
+          <p>
+            Create your MEDICO account and manage your healthcare journey from
+            one secure place.
+          </p>
+        </div>
+
+        <div class="auth-visual-footer">
+          <span> SECURE </span>
+
+          <span> PRIVATE </span>
+
+          <span> TRUSTED </span>
+        </div>
+      </section>
+
+      <!-- =========================================
+             RIGHT SIDE
+        ========================================== -->
+
+      <section class="auth-form-section">
+        <div class="auth-form-wrapper">
+          <!-- Mobile Logo -->
+
+          <a href="/index.html" class="mobile-auth-logo logo">
+            <span>MED</span>ICO
+          </a>
+
+          <!-- Heading -->
+
+          <div class="auth-heading">
+            <span> PATIENT PORTAL </span>
+
+            <h2>Create your account</h2>
+
+            <p>Enter your details to get started.</p>
+          </div>
+
+          <!-- =================================
+                     REGISTER FORM
+                ================================== -->
+
+          <form class="auth-form" id="registerForm" novalidate>
+            <!-- Name -->
+
+            <div class="form-group">
+              <label for="registerName"> Full Name </label>
+
+              <input
+                type="text"
+                id="registerName"
+                name="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <!-- Email -->
+
+            <div class="form-group">
+              <label for="registerEmail"> Email Address </label>
+
+              <input
+                type="email"
+                id="registerEmail"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <!-- Phone -->
+
+            <div class="form-group">
+              <label for="registerPhone"> Phone Number </label>
+
+              <input
+                type="tel"
+                id="registerPhone"
+                name="phone"
+                placeholder="Enter your phone number"
+                autocomplete="tel"
+              />
+            </div>
+
+            <!-- Password -->
+
+            <div class="form-group">
+              <label for="registerPassword"> Password </label>
+
+              <input
+                type="password"
+                id="registerPassword"
+                name="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <!-- Confirm Password -->
+
+            <div class="form-group">
+              <label for="registerConfirmPassword"> Confirm Password </label>
+
+              <input
+                type="password"
+                id="registerConfirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <!-- Terms -->
+
+            <label class="remember-me">
+              <input type="checkbox" id="registerTerms" name="terms" required />
+
+              <span> I agree to the MEDICO terms and privacy policy. </span>
+            </label>
+
+            <!-- Submit -->
+
+            <button type="submit" class="btn btn-primary auth-submit">
+              Create Account
+
+              <span>→</span>
+            </button>
+
+            <!-- Divider -->
+
+            <div class="auth-divider">
+              <span> OR </span>
+            </div>
+
+            <!-- Google -->
+
+            <button type="button" class="google-btn" id="googleRegisterBtn">
+              <strong> G </strong>
+
+              Continue with Google
+            </button>
+          </form>
+
+          <!-- Login -->
+
+          <p class="auth-switch">
+            Already have an account?
+
+            <a href="/pages/patient-login.html"> Sign in </a>
+          </p>
+
+          <!-- Back -->
+
+          <a href="/index.html" class="back-home"> ← Back to MEDICO </a>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Doctor | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/add-doctor.css" />
+  </head>
+
+  <body class="add-doctor-page">
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="admin-sidebar">
+      <a href="/index.html" class="admin-logo"> <span>MED</span>ICO </a>
+
+      <div class="admin-portal-label">ADMIN PORTAL</div>
+
+      <nav class="admin-navigation">
+        <a href="/pages/dashboard/clinic-dashboard.html"> Dashboard </a>
+
+        <a href="/pages/doctors.html" class="active"> Doctors </a>
+
+        <a href="/pages/dashboard/clinic-patients.html"> Patients </a>
+
+        <a href="/pages/dashboard/clinic-appointments.html"> Appointments </a>
+      </nav>
+
+      <button type="button" id="adminLogoutButton" class="admin-logout">
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="admin-main">
+      <!-- HEADER -->
+
+      <header class="admin-header">
+        <div>
+          <span class="page-label"> DOCTOR MANAGEMENT </span>
+
+          <h1>Add Doctor</h1>
+
+          <p>Create a secure doctor account for the MEDICO clinic.</p>
+        </div>
+
+        <a href="/pages/doctors.html" class="back-button"> ← Back to Doctors </a>
+      </header>
+
+      <!-- =====================================
+             FORM
+        ====================================== -->
+
+      <section class="doctor-form-card">
+        <div class="form-heading">
+          <span> NEW DOCTOR </span>
+
+          <h2>Doctor information</h2>
+
+          <p>Enter the doctor's professional and account details.</p>
+        </div>
+
+        <form id="addDoctorForm" novalidate>
+          <!-- =================================
+                     PERSONAL INFORMATION
+                ================================== -->
+
+          <div class="form-section">
+            <div class="section-title">
+              <span>01</span>
+
+              <div>
+                <h3>Personal information</h3>
+
+                <p>Basic doctor details</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <!-- NAME -->
+
+              <div class="form-group full">
+                <label for="doctorName"> Full name </label>
+
+                <input
+                  type="text"
+                  id="doctorName"
+                  name="name"
+                  placeholder="Dr. Sarah Wilson"
+                  required
+                />
+              </div>
+
+              <!-- EMAIL -->
+
+              <div class="form-group">
+                <label for="doctorEmail"> Email address </label>
+
+                <input
+                  type="email"
+                  id="doctorEmail"
+                  name="email"
+                  placeholder="doctor@medico.com"
+                  required
+                />
+              </div>
+
+              <!-- PHONE -->
+
+              <div class="form-group">
+                <label for="doctorPhone"> Phone number </label>
+
+                <input
+                  type="tel"
+                  id="doctorPhone"
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================
+                     PROFESSIONAL INFORMATION
+                ================================== -->
+
+          <div class="form-section">
+            <div class="section-title">
+              <span>02</span>
+
+              <div>
+                <h3>Professional information</h3>
+
+                <p>Medical qualifications and specialization</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <!-- SPECIALIZATION -->
+
+              <div class="form-group">
+                <label for="specialization"> Specialization </label>
+
+                <input
+                  type="text"
+                  id="specialization"
+                  name="specialization"
+                  placeholder="Cardiologist"
+                  required
+                />
+              </div>
+
+              <!-- DEPARTMENT -->
+
+              <div class="form-group">
+                <label for="department"> Department </label>
+
+                <input
+                  type="text"
+                  id="department"
+                  name="department"
+                  placeholder="Cardiology"
+                  required
+                />
+              </div>
+
+              <!-- QUALIFICATION -->
+
+              <div class="form-group">
+                <label for="qualification"> Qualification </label>
+
+                <input
+                  type="text"
+                  id="qualification"
+                  name="qualification"
+                  placeholder="MBBS, MD"
+                  required
+                />
+              </div>
+
+              <!-- EXPERIENCE -->
+
+              <div class="form-group">
+                <label for="experience"> Experience </label>
+
+                <input
+                  type="number"
+                  id="experience"
+                  name="experience"
+                  min="0"
+                  max="60"
+                  placeholder="10"
+                  required
+                />
+              </div>
+
+              <!-- LICENSE -->
+
+              <div class="form-group">
+                <label for="licenseNumber"> Medical license number </label>
+
+                <input
+                  type="text"
+                  id="licenseNumber"
+                  name="licenseNumber"
+                  placeholder="MED-123456"
+                  required
+                />
+              </div>
+
+              <!-- ROOM -->
+
+              <div class="form-group">
+                <label for="room"> Consultation room </label>
+
+                <input
+                  type="text"
+                  id="room"
+                  name="room"
+                  placeholder="Room 204"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================
+                     LOGIN INFORMATION
+                ================================== -->
+
+          <div class="form-section">
+            <div class="section-title">
+              <span>03</span>
+
+              <div>
+                <h3>Login credentials</h3>
+
+                <p>Credentials used by the doctor to access the portal</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <!-- PASSWORD -->
+
+              <div class="form-group">
+                <label for="doctorPassword"> Temporary password </label>
+
+                <input
+                  type="password"
+                  id="doctorPassword"
+                  name="password"
+                  placeholder="Create a temporary password"
+                  minlength="6"
+                  required
+                />
+              </div>
+
+              <!-- CONFIRM PASSWORD -->
+
+              <div class="form-group">
+                <label for="confirmPassword"> Confirm password </label>
+
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Repeat the password"
+                  minlength="6"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================
+                     BIO
+                ================================== -->
+
+          <div class="form-section">
+            <div class="section-title">
+              <span>04</span>
+
+              <div>
+                <h3>Doctor profile</h3>
+
+                <p>Information displayed on the public doctor profile</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="doctorBio"> Professional biography </label>
+
+              <textarea
+                id="doctorBio"
+                name="bio"
+                rows="6"
+                placeholder="Write a short professional biography..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- =================================
+                     STATUS MESSAGE
+                ================================== -->
+
+          <div
+            id="doctorFormMessage"
+            class="form-message"
+            aria-live="polite"
+          ></div>
+
+          <!-- =================================
+                     ACTIONS
+                ================================== -->
+
+          <div class="form-actions">
+            <a href="/pages/doctors.html" class="cancel-button"> Cancel </a>
+
+            <button
+              type="submit"
+              id="createDoctorButton"
+              class="create-doctor-button"
+            >
+              <span> Create Doctor Account </span>
+
+              <strong> → </strong>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/admin/add-doctor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doctor Dashboard | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/doctor.css" />
+  </head>
+
+  <body class="doctor-dashboard-page">
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="doctor-sidebar">
+      <a href="/index.html" class="doctor-logo"> <span>MED</span>ICO </a>
+
+      <div class="doctor-sidebar-label">DOCTOR PORTAL</div>
+
+      <nav class="doctor-navigation">
+        <a href="/pages/doctors/doctor-dashboard.html" class="active">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/doctors/doctor-appointments.html">
+          <span>02</span>
+
+          Appointments
+        </a>
+
+        <a href="/pages/doctors/doctor-schedule.html">
+          <span>03</span>
+
+          Schedule
+        </a>
+
+        <a href="/pages/doctors/doctor-profile.html">
+          <span>04</span>
+
+          My Profile
+        </a>
+      </nav>
+
+      <button type="button" id="doctorLogoutButton" class="doctor-logout">
+        <span>↪</span>
+
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="doctor-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="doctor-dashboard-header">
+        <div>
+          <div class="doctor-dashboard-label">MEDICO • DOCTOR PORTAL</div>
+
+          <h1>Dashboard</h1>
+        </div>
+
+        <div class="doctor-header-profile">
+          <div class="doctor-avatar">DR</div>
+
+          <div>
+            <strong id="doctorName"> Doctor </strong>
+
+            <span id="doctorSpecialization"> Medical Professional </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- =====================================
+             STATUS
+        ====================================== -->
+
+      <div
+        id="doctorDashboardMessage"
+        class="doctor-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+      <section class="doctor-stat-grid">
+        <article class="doctor-stat-card">
+          <div class="stat-card-top">
+            <span> TODAY </span>
+
+            <div>01</div>
+          </div>
+
+          <strong id="todayAppointments"> — </strong>
+
+          <p>Today's appointments</p>
+        </article>
+
+        <article class="doctor-stat-card">
+          <div class="stat-card-top">
+            <span> PENDING </span>
+
+            <div>02</div>
+          </div>
+
+          <strong id="pendingAppointments"> — </strong>
+
+          <p>Awaiting your response</p>
+        </article>
+
+        <article class="doctor-stat-card">
+          <div class="stat-card-top">
+            <span> UPCOMING </span>
+
+            <div>03</div>
+          </div>
+
+          <strong id="upcomingAppointments"> — </strong>
+
+          <p>Upcoming appointments</p>
+        </article>
+
+        <article class="doctor-stat-card">
+          <div class="stat-card-top">
+            <span> STATUS </span>
+
+            <div>04</div>
+          </div>
+
+          <strong id="doctorAvailability"> — </strong>
+
+          <p>Current availability</p>
+        </article>
+      </section>
+
+      <!-- =====================================
+             CONTENT GRID
+        ====================================== -->
+
+      <section class="doctor-content-grid">
+        <!-- APPOINTMENTS -->
+
+        <div class="doctor-panel-card">
+          <div class="panel-card-header">
+            <div>
+              <span> APPOINTMENTS </span>
+
+              <h2>Recent appointments</h2>
+            </div>
+
+            <a href="/pages/doctors/doctor-appointments.html" class="panel-link">
+              View all →
+            </a>
+          </div>
+
+          <div id="recentAppointments" class="doctor-appointments-list">
+            <div class="empty-doctor-state">
+              <div class="empty-icon">—</div>
+
+              <h3>No appointments loaded</h3>
+
+              <p>Appointment information will appear here when available.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="doctor-side-column">
+          <!-- AVAILABILITY -->
+
+          <div class="doctor-panel-card compact-panel">
+            <div class="panel-card-header">
+              <div>
+                <span> AVAILABILITY </span>
+
+                <h2>Your schedule</h2>
+              </div>
+            </div>
+
+            <div class="availability-status">
+              <div class="availability-dot"></div>
+
+              <div>
+                <strong id="availabilityText"> Checking... </strong>
+
+                <p>Your current schedule</p>
+              </div>
+            </div>
+
+            <a href="/pages/doctors/doctor-schedule.html" class="schedule-button">
+              Manage schedule →
+            </a>
+          </div>
+
+          <!-- PROFILE -->
+
+          <div class="doctor-panel-card compact-panel">
+            <div class="panel-card-header">
+              <div>
+                <span> PROFILE </span>
+
+                <h2>Your information</h2>
+              </div>
+            </div>
+
+            <div class="doctor-profile-mini">
+              <div class="mini-avatar">DR</div>
+
+              <div>
+                <strong id="profileDoctorName"> Doctor </strong>
+
+                <p id="profileDoctorEmail">—</p>
+              </div>
+            </div>
+
+            <a href="/pages/doctors/doctor-profile.html" class="schedule-button">
+              View profile →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/doctor/doctor-dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Book a medical appointment with MEDICO."
+    />
+
+    <title>Book Appointment | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/appointment.css" />
+  </head>
+
+  <body>
+    <!-- =========================================
+         BACKGROUND
+    ========================================== -->
+
+    <div class="background">
+      <div class="orb orb-one"></div>
+
+      <div class="orb orb-two"></div>
+
+      <div class="orb orb-three"></div>
+
+      <div class="grid"></div>
+    </div>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+      <a href="/index.html" class="logo"> <span>MED</span>ICO </a>
+
+      <nav>
+        <a href="/index.html"> Home </a>
+
+        <a href="/pages/about.html"> About </a>
+
+        <a href="/pages/doctors.html"> Doctors </a>
+
+        <a href="/pages/contact.html"> Contact </a>
+
+        <a href="/pages/appointment.html" class="active"> Appointment </a>
+      </nav>
+
+      <a href="/pages/patient-login.html" class="nav-login"> Patient Login </a>
+    </header>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+      <!-- HERO -->
+
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">MEDICO • PATIENT PORTAL</div>
+
+          <h1>
+            Book your
+            <span>appointment.</span>
+          </h1>
+
+          <p>
+            Choose your doctor, select your preferred date and time, and send
+            your appointment request securely.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================
+             APPOINTMENT AREA
+        ====================================== -->
+
+      <section class="booking-section">
+        <div class="booking-wrapper">
+          <!-- LEFT -->
+
+          <div class="booking-info">
+            <div class="info-number">01</div>
+
+            <h2>
+              Healthcare
+              <span>starts with a visit.</span>
+            </h2>
+
+            <p>
+              MEDICO connects you with healthcare professionals through a simple
+              and secure appointment system.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature">
+                <div class="feature-icon">01</div>
+
+                <div>
+                  <h3>Choose your doctor</h3>
+
+                  <p>Select a doctor directly from our database.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon">02</div>
+
+                <div>
+                  <h3>Select your schedule</h3>
+
+                  <p>Pick a convenient date and consultation time.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon">03</div>
+
+                <div>
+                  <h3>Get confirmation</h3>
+
+                  <p>Your doctor will review the appointment request.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="secure-badge">
+              <span class="secure-dot"></span>
+
+              Secure patient appointment system
+            </div>
+          </div>
+
+          <!-- RIGHT FORM -->
+
+          <div class="booking-card">
+            <div class="card-top">
+              <div>
+                <span> APPOINTMENT REQUEST </span>
+
+                <h2>Schedule a visit</h2>
+              </div>
+
+              <div class="card-icon">+</div>
+            </div>
+
+            <!-- FORM -->
+
+            <form id="appointmentForm" autocomplete="off">
+              <!-- DOCTOR -->
+
+              <div class="form-group">
+                <label for="doctor"> Doctor </label>
+
+                <div class="select-wrapper">
+                  <select id="doctor" name="doctor" required>
+                    <option value="">Loading doctors...</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- DATE -->
+
+              <div class="form-group">
+                <label for="appointmentDate"> Appointment Date </label>
+
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  name="appointmentDate"
+                  required
+                />
+              </div>
+
+              <!-- TIME -->
+
+              <div class="form-group">
+                <label for="appointmentTime"> Preferred Time </label>
+
+                <input
+                  type="time"
+                  id="appointmentTime"
+                  name="appointmentTime"
+                  required
+                />
+              </div>
+
+              <!-- REASON -->
+
+              <div class="form-group">
+                <label for="reason">
+                  Reason for Visit
+                  <small>(optional)</small>
+                </label>
+
+                <textarea
+                  id="reason"
+                  name="reason"
+                  rows="5"
+                  placeholder="Tell us briefly why you are visiting..."
+                ></textarea>
+              </div>
+
+              <!-- NOTICE -->
+
+              <div class="notice">
+                <div class="notice-symbol">i</div>
+
+                <div>
+                  <strong> Appointment request </strong>
+
+                  <p>
+                    Your appointment will remain pending until it is reviewed by
+                    the clinic.
+                  </p>
+                </div>
+              </div>
+
+              <!-- SUBMIT -->
+
+              <button type="submit" class="submit-button">
+                <span> Request Appointment </span>
+
+                <span class="arrow"> → </span>
+              </button>
+
+              <p class="form-security">
+                Your appointment information is transmitted securely.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+      <div class="footer-inner">
+        <a href="/index.html" class="logo"> <span>MED</span>ICO </a>
+
+        <p>Modern healthcare. Thoughtfully delivered.</p>
+
+        <div class="footer-links">
+          <a href="/index.html"> Home </a>
+
+          <a href="/pages/about.html"> About </a>
+
+          <a href="/pages/doctors.html"> Doctors </a>
+
+          <a href="/pages/contact.html"> Contact </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/appointment.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Appointments | MEDICO Clinic</title>
+
+    <link rel="stylesheet" href="/css/clinic-dashboard.css" />
+  </head>
+
+  <body class="clinic-dashboard-page">
+    <!-- SIDEBAR -->
+
+    <aside class="clinic-sidebar">
+      <a href="/index.html" class="clinic-logo"> <span>MED</span>ICO </a>
+
+      <div class="clinic-sidebar-label">CLINIC ADMINISTRATION</div>
+
+      <nav class="clinic-navigation">
+        <a href="/pages/dashboard/clinic-dashboard.html">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/dashboard/add-doctor.html">
+          <span>01</span>
+          Add Doctor
+        </a>
+
+        <a href="/pages/dashboard/clinic-doctors.html">
+          <span>02</span>
+          Doctors
+        </a>
+
+        <a href="/pages/dashboard/clinic-patients.html">
+          <span>03</span>
+          Patients
+        </a>
+
+        <a href="/pages/dashboard/clinic-appointments.html" class="active">
+          <span>04</span>
+          Appointments
+        </a>
+      </nav>
+
+      <button type="button" id="clinicLogoutButton" class="clinic-logout">
+        <span>↪</span>
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="clinic-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="clinic-dashboard-header">
+        <div>
+          <div class="clinic-dashboard-label">
+            MEDICO • CLINIC ADMINISTRATION
+          </div>
+
+          <h1>Appointments</h1>
+
+          <p>Monitor and manage all patient appointments across the clinic.</p>
+        </div>
+
+        <div class="clinic-admin-profile">
+          <div class="clinic-admin-avatar">AD</div>
+
+          <div>
+            <strong id="adminName"> Administrator </strong>
+
+            <span id="adminEmail"> admin@medico.com </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MESSAGE -->
+
+      <div
+        id="appointmentMessage"
+        class="clinic-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- APPOINTMENTS PANEL -->
+
+      <section class="clinic-panel-card">
+        <div class="clinic-panel-header">
+          <div>
+            <span> APPOINTMENT MANAGEMENT </span>
+
+            <h2>All appointments</h2>
+          </div>
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="clinic-doctor-search">
+          <input
+            type="search"
+            id="appointmentSearch"
+            placeholder="Search patient or doctor..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- APPOINTMENTS -->
+
+        <div id="appointmentsList" class="clinic-appointments-list">
+          <div class="clinic-empty-state">
+            <div>—</div>
+
+            <h3>Loading appointments...</h3>
+
+            <p>Appointment information will appear here.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/dashboard/clinic-appointments.js"></script>
+  </body>
+</html>

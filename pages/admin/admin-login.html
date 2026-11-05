@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin Login | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/admin-login.css" />
+  </head>
+
+  <body class="admin-login-page">
+    <main class="admin-login-wrapper">
+      <!-- BRAND -->
+
+      <section class="admin-login-brand">
+        <a href="/index.html" class="admin-logo"> <span>MED</span>ICO </a>
+
+        <div class="admin-brand-content">
+          <span> MEDICO • CLINIC MANAGEMENT </span>
+
+          <h1>
+            Clinic administration,
+            <br />
+            made simple.
+          </h1>
+
+          <p>
+            Secure access to doctors, patients and appointments across your
+            clinic.
+          </p>
+        </div>
+      </section>
+
+      <!-- LOGIN -->
+
+      <section class="admin-login-card">
+        <div class="admin-login-heading">
+          <span> ADMINISTRATOR </span>
+
+          <h2>Sign in</h2>
+
+          <p>Enter your clinic administrator credentials to continue.</p>
+        </div>
+
+        <form id="adminLoginForm">
+          <!-- EMAIL -->
+
+          <div class="admin-form-group">
+            <label for="adminEmail"> Email address </label>
+
+            <input
+              type="email"
+              id="adminEmail"
+              name="email"
+              placeholder="admin@medico.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <!-- PASSWORD -->
+
+          <div class="admin-form-group">
+            <label for="adminPassword"> Password </label>
+
+            <input
+              type="password"
+              id="adminPassword"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <!-- MESSAGE -->
+
+          <div
+            id="adminLoginMessage"
+            class="admin-login-message"
+            aria-live="polite"
+          ></div>
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            id="adminLoginButton"
+            class="admin-login-button"
+          >
+            Sign in to dashboard
+          </button>
+        </form>
+
+        <a href="/index.html" class="back-home"> ← Back to MEDICO </a>
+      </section>
+    </main>
+
+    <script src="/js/admin/admin-login.js"></script>
+  </body>
+</html>

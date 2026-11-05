@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MEDICO Patient Dashboard" />
+    <title>Patient Dashboard | MEDICO</title>
+    <link rel="stylesheet" href="/css/patient-dashboard.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <a href="/index.html" class="brand"><span>MED</span>ICO</a>
+
+        <div class="profile-mini">
+          <div class="avatar" id="patientAvatar">P</div>
+          <div>
+            <strong id="patientNameSide">Patient</strong>
+            <span>Patient account</span>
+          </div>
+        </div>
+
+        <nav class="side-nav" aria-label="Patient navigation">
+          <a href="#overview" class="active">Overview</a>
+          <a href="#appointments">My Appointments</a>
+          <a href="/pages/appointment.html">Book Appointment</a>
+          <a href="/pages/doctors.html">Find a Doctor</a>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Log out <span>→</span></button>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">PATIENT PORTAL</span>
+            <h1 id="welcomeTitle">Good day.</h1>
+            <p>Manage your appointments and stay connected with MEDICO.</p>
+          </div>
+          <a href="/pages/appointment.html" class="primary-button">Book an appointment <span>+</span></a>
+        </header>
+
+        <section id="overview" class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Upcoming</span>
+            <strong id="upcomingCount">0</strong>
+            <small>scheduled visits</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Pending</span>
+            <strong id="pendingCount">0</strong>
+            <small>awaiting confirmation</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Completed</span>
+            <strong id="completedCount">0</strong>
+            <small>completed visits</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel appointment-panel" id="appointments">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">YOUR CARE</span>
+                <h2>My appointments</h2>
+              </div>
+              <a href="/pages/appointment.html">New appointment</a>
+            </div>
+
+            <div id="appointmentList" class="appointment-list">
+              <div class="loading-state">Loading your appointments...</div>
+            </div>
+          </article>
+
+          <aside class="panel profile-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">ACCOUNT</span>
+                <h2>Your profile</h2>
+              </div>
+            </div>
+
+            <div class="profile-details">
+              <div><span>Name</span><strong id="profileName">—</strong></div>
+              <div><span>Email</span><strong id="profileEmail">—</strong></div>
+              <div><span>Phone</span><strong id="profilePhone">—</strong></div>
+            </div>
+
+            <div class="secure-note">
+              <span></span>
+              Your session is protected by secure authentication.
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/patient/patient-dashboard.js"></script>
+  </body>
+</html>

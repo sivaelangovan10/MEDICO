@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="MEDICO Doctor Profile" />
+
+    <title>My Profile | MEDICO Doctor Portal</title>
+
+    <link rel="stylesheet" href="/css/doctor.css" />
+  </head>
+
+  <body class="doctor-dashboard-page">
+    <!-- SIDEBAR -->
+
+    <aside class="doctor-sidebar">
+      <a href="/index.html" class="doctor-logo"> <span>MED</span>ICO </a>
+
+      <div class="doctor-sidebar-label">DOCTOR PORTAL</div>
+
+      <nav class="doctor-navigation">
+        <a href="/pages/doctors/doctor-dashboard.html">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/doctors/doctor-appointments.html">
+          <span>02</span>
+          Appointments
+        </a>
+
+        <a href="/pages/doctors/doctor-schedule.html">
+          <span>03</span>
+          Schedule
+        </a>
+
+        <a href="/pages/doctors/doctor-profile.html" class="active">
+          <span>04</span>
+          My Profile
+        </a>
+      </nav>
+
+      <button type="button" id="doctorLogoutButton" class="doctor-logout">
+        <span>↪</span>
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="doctor-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="doctor-dashboard-header">
+        <div>
+          <div class="doctor-dashboard-label">MEDICO • DOCTOR PORTAL</div>
+
+          <h1>My Profile</h1>
+        </div>
+
+        <div class="doctor-header-profile">
+          <div class="doctor-avatar" id="headerDoctorAvatar">DR</div>
+
+          <div>
+            <strong id="headerDoctorName"> Doctor </strong>
+
+            <span id="headerDoctorSpecialization"> Medical Professional </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MESSAGE -->
+
+      <div
+        id="profileMessage"
+        class="doctor-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- PROFILE -->
+
+      <section class="doctor-panel-card">
+        <div class="profile-page-header">
+          <div class="large-doctor-avatar" id="profileAvatar">DR</div>
+
+          <div>
+            <span class="panel-section-label"> PROFESSIONAL PROFILE </span>
+
+            <h2 id="profileDisplayName">Doctor</h2>
+
+            <p id="profileDisplaySpecialization">Medical Professional</p>
+          </div>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="doctorProfileForm" class="doctor-profile-form">
+          <div class="profile-form-grid">
+            <!-- NAME -->
+
+            <div class="doctor-form-group">
+              <label for="doctorFullName"> Full Name </label>
+
+              <input
+                type="text"
+                id="doctorFullName"
+                name="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="doctor-form-group">
+              <label for="doctorEmail"> Email Address </label>
+
+              <input
+                type="email"
+                id="doctorEmail"
+                name="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="doctor-form-group">
+              <label for="doctorPhone"> Phone Number </label>
+
+              <input
+                type="tel"
+                id="doctorPhone"
+                name="phone"
+                placeholder="Enter your phone number"
+                autocomplete="tel"
+              />
+            </div>
+
+            <!-- SPECIALIZATION -->
+
+            <div class="doctor-form-group">
+              <label for="doctorSpecializationInput"> Specialization </label>
+
+              <input
+                type="text"
+                id="doctorSpecializationInput"
+                name="specialization"
+                placeholder="e.g. Cardiology"
+              />
+            </div>
+
+            <!-- EXPERIENCE -->
+
+            <div class="doctor-form-group">
+              <label for="doctorExperience"> Experience </label>
+
+              <input
+                type="number"
+                id="doctorExperience"
+                name="experience"
+                min="0"
+                max="70"
+                placeholder="Years of experience"
+              />
+            </div>
+
+            <!-- LICENSE -->
+
+            <div class="doctor-form-group">
+              <label for="doctorLicense"> Medical License </label>
+
+              <input
+                type="text"
+                id="doctorLicense"
+                name="licenseNumber"
+                placeholder="License number"
+              />
+            </div>
+
+            <!-- DEPARTMENT -->
+
+            <div class="doctor-form-group">
+              <label for="doctorDepartment"> Department </label>
+
+              <input
+                type="text"
+                id="doctorDepartment"
+                name="department"
+                placeholder="Hospital department"
+              />
+            </div>
+
+            <!-- ROOM -->
+
+            <div class="doctor-form-group">
+              <label for="doctorRoom"> Consultation Room </label>
+
+              <input
+                type="text"
+                id="doctorRoom"
+                name="room"
+                placeholder="e.g. Room 204"
+              />
+            </div>
+          </div>
+
+          <!-- BIO -->
+
+          <div class="doctor-form-group profile-bio-group">
+            <label for="doctorBio"> Professional Bio </label>
+
+            <textarea
+              id="doctorBio"
+              name="bio"
+              rows="5"
+              maxlength="1000"
+              placeholder="Briefly describe your professional experience..."
+            ></textarea>
+          </div>
+
+          <!-- ACTIONS -->
+
+          <div class="profile-form-actions">
+            <button
+              type="reset"
+              id="resetProfileButton"
+              class="profile-reset-button"
+            >
+              Reset
+            </button>
+
+            <button
+              type="submit"
+              id="saveProfileButton"
+              class="schedule-save-button"
+            >
+              Save profile
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/doctor/doctor-profile.js"></script>
+  </body>
+</html>

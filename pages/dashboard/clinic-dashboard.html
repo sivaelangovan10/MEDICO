@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Clinic Dashboard | MEDICO</title>
+
+    <link rel="stylesheet" href="/css/clinic-dashboard.css" />
+  </head>
+
+  <body class="clinic-dashboard-page">
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="clinic-sidebar">
+      <a href="/index.html" class="clinic-logo"> <span>MED</span>ICO </a>
+
+      <div class="clinic-sidebar-label">CLINIC ADMINISTRATION</div>
+
+      <nav class="clinic-navigation">
+        <a href="/pages/dashboard/clinic-dashboard.html" class="active">
+          <span>01</span>
+          Dashboard
+        </a>
+
+        <a href="/pages/dashboard/add-doctor.html">
+          <span>01</span>
+          Add Doctor
+        </a>
+
+        <a href="/pages/dashboard/clinic-doctors.html">
+          <span>02</span>
+          Doctors
+        </a>
+
+        <a href="/pages/dashboard/clinic-patients.html">
+          <span>03</span>
+          Patients
+        </a>
+
+        <a href="/pages/dashboard/clinic-appointments.html">
+          <span>04</span>
+          Appointments
+        </a>
+      </nav>
+
+      <button type="button" id="clinicLogoutButton" class="clinic-logout">
+        <span>↪</span>
+        Sign Out
+      </button>
+    </aside>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="clinic-dashboard-main">
+      <!-- HEADER -->
+
+      <header class="clinic-dashboard-header">
+        <div>
+          <div class="clinic-dashboard-label">
+            MEDICO • CLINIC ADMINISTRATION
+          </div>
+
+          <h1>Clinic Dashboard</h1>
+
+          <p>Overview of your clinic's doctors, patients and appointments.</p>
+        </div>
+
+        <div class="clinic-admin-profile">
+          <div class="clinic-admin-avatar">AD</div>
+
+          <div>
+            <strong id="adminName"> Administrator </strong>
+
+            <span id="adminEmail"> admin@medico.com </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- STATUS MESSAGE -->
+
+      <div
+        id="dashboardMessage"
+        class="clinic-dashboard-message"
+        aria-live="polite"
+      ></div>
+
+      <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+      <section class="clinic-stat-grid">
+        <article class="clinic-stat-card">
+          <div class="clinic-stat-top">
+            <span> DOCTORS </span>
+
+            <div>01</div>
+          </div>
+
+          <strong id="totalDoctors"> — </strong>
+
+          <p>Registered doctors</p>
+        </article>
+
+        <article class="clinic-stat-card">
+          <div class="clinic-stat-top">
+            <span> PATIENTS </span>
+
+            <div>02</div>
+          </div>
+
+          <strong id="totalPatients"> — </strong>
+
+          <p>Registered patients</p>
+        </article>
+
+        <article class="clinic-stat-card">
+          <div class="clinic-stat-top">
+            <span> APPOINTMENTS </span>
+
+            <div>03</div>
+          </div>
+
+          <strong id="totalAppointments"> — </strong>
+
+          <p>Total bookings</p>
+        </article>
+
+        <article class="clinic-stat-card">
+          <div class="clinic-stat-top">
+            <span> PENDING </span>
+
+            <div>04</div>
+          </div>
+
+          <strong id="pendingAppointments"> — </strong>
+
+          <p>Awaiting confirmation</p>
+        </article>
+      </section>
+
+      <!-- =====================================
+             CONTENT
+        ====================================== -->
+
+      <section class="clinic-content-grid">
+        <!-- RECENT APPOINTMENTS -->
+
+        <div class="clinic-panel-card">
+          <div class="clinic-panel-header">
+            <div>
+              <span> APPOINTMENTS </span>
+
+              <h2>Recent bookings</h2>
+            </div>
+
+            <a href="/pages/dashboard/clinic-appointments.html" class="clinic-panel-link">
+              View all →
+            </a>
+          </div>
+
+          <div id="recentAppointments" class="clinic-appointments-list">
+            <div class="clinic-empty-state">
+              <div>—</div>
+
+              <h3>Loading appointments...</h3>
+
+              <p>Recent patient bookings will appear here.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="clinic-side-column">
+          <!-- DOCTORS -->
+
+          <div class="clinic-panel-card">
+            <div class="clinic-panel-header">
+              <div>
+                <span> MEDICAL TEAM </span>
+
+                <h2>Doctors</h2>
+              </div>
+
+              <a href="/pages/dashboard/clinic-doctors.html" class="clinic-panel-link">
+                Manage →
+              </a>
+            </div>
+
+            <div id="doctorSummary" class="clinic-summary-list">
+              <div class="clinic-summary-item">
+                <strong> — </strong>
+
+                <span> Doctors available </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PATIENTS -->
+
+          <div class="clinic-panel-card">
+            <div class="clinic-panel-header">
+              <div>
+                <span> PATIENTS </span>
+
+                <h2>Patient overview</h2>
+              </div>
+
+              <a href="/pages/dashboard/clinic-patients.html" class="clinic-panel-link">
+                View →
+              </a>
+            </div>
+
+            <div id="patientSummary" class="clinic-summary-list">
+              <div class="clinic-summary-item">
+                <strong> — </strong>
+
+                <span> Registered patients </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/dashboard/clinic-dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1314 @@
+/* =========================================
+   MEDICO DOCTOR LOGIN
+   ========================================= */
+
+:root {
+
+    --navy-950: #06111d;
+    --navy-900: #081827;
+    --navy-850: #0b1c2c;
+    --navy-800: #102638;
+
+    --cyan: #55c8d8;
+    --cyan-light: #86e2ec;
+
+    --white: #f4f8fa;
+    --text: #d8e4e9;
+    --muted: #8499a8;
+
+    --card-border: rgba(138, 178, 195, 0.16);
+
+    --input-bg: rgba(255, 255, 255, 0.035);
+
+    --danger: #f27d7d;
+
+    --radius: 20px;
+
+}
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--white);
+
+    background: var(--navy-950);
+
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    border: 0;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   MAIN WRAPPER
+   ========================================= */
+
+.patient-login-wrapper {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(380px, 0.95fr)
+        minmax(480px, 1.05fr);
+
+}
+
+
+/* =========================================
+   LEFT INTRO
+   ========================================= */
+
+.patient-login-intro {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(63, 183, 205, 0.13),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(24, 102, 128, 0.12),
+            transparent 38%
+        ),
+
+        var(--navy-900);
+
+}
+
+
+/* subtle grid */
+
+.patient-login-intro::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(116, 181, 199, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(116, 181, 199, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 54px 54px;
+
+    opacity: 0.55;
+
+}
+
+
+/* glow */
+
+.patient-login-intro::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: -180px;
+    bottom: -190px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(56, 177, 199, 0.08);
+
+    filter: blur(30px);
+
+}
+
+
+/* =========================================
+   OVERLAY
+   ========================================= */
+
+.patient-intro-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 12, 21, 0.15),
+            rgba(6, 17, 29, 0.45)
+        );
+
+}
+
+
+/* =========================================
+   INTRO CONTENT
+   ========================================= */
+
+.patient-intro-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    padding:
+        52px clamp(40px, 7vw, 110px)
+        50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.patient-logo {
+
+    width: fit-content;
+
+    font-size: 28px;
+
+    font-weight: 850;
+
+    letter-spacing: -1.2px;
+
+}
+
+
+.patient-logo span {
+
+    color: var(--cyan);
+
+}
+
+
+.patient-logo:hover {
+
+    opacity: 0.85;
+
+}
+
+
+/* =========================================
+   PORTAL LABEL
+   ========================================= */
+
+.patient-portal-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 35px;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.patient-portal-label span {
+
+    width: 28px;
+
+    height: 1px;
+
+    background:
+        rgba(85, 200, 216, 0.6);
+
+}
+
+
+/* =========================================
+   INTRO TEXT
+   ========================================= */
+
+.patient-intro-text {
+
+    max-width: 650px;
+
+    margin-top: auto;
+
+    margin-bottom: auto;
+
+    padding:
+        90px 0
+        70px;
+
+}
+
+
+.intro-small {
+
+    margin-bottom: 20px;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.patient-intro-text h1 {
+
+    color: var(--white);
+
+    font-size:
+        clamp(44px, 5.2vw, 76px);
+
+    font-weight: 750;
+
+    line-height: 0.98;
+
+    letter-spacing: -3.5px;
+
+}
+
+
+.patient-intro-text h1 span {
+
+    color: var(--cyan-light);
+
+}
+
+
+.intro-description {
+
+    max-width: 500px;
+
+    margin-top: 32px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================
+   INTRO FOOTER
+   ========================================= */
+
+.patient-intro-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #68808f;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.intro-line {
+
+    width: 40px;
+
+    height: 1px;
+
+    background: #365361;
+
+}
+
+
+/* =========================================
+   RIGHT LOGIN SECTION
+   ========================================= */
+
+.patient-login-section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        50px clamp(30px, 6vw, 100px);
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(54, 130, 151, 0.08),
+            transparent 32%
+        ),
+
+        var(--navy-950);
+
+}
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
+
+.patient-login-card {
+
+    width: min(100%, 475px);
+
+    padding: 45px;
+
+    border:
+        1px solid var(--card-border);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 38, 54, 0.82),
+            rgba(7, 20, 32, 0.92)
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(16px);
+
+    animation:
+        cardAppear 0.7s ease both;
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   CARD HEADER
+   ========================================= */
+
+.login-card-header {
+
+    margin-bottom: 38px;
+
+}
+
+
+.login-eyebrow {
+
+    margin-bottom: 13px;
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 2.2px;
+
+}
+
+
+.login-card-header h2 {
+
+    color: var(--white);
+
+    font-size: 42px;
+
+    font-weight: 750;
+
+    line-height: 1;
+
+    letter-spacing: -1.8px;
+
+}
+
+
+.login-card-header p {
+
+    max-width: 330px;
+
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.patient-login-form {
+
+    width: 100%;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 24px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #a7bac4;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   PASSWORD ROW
+   ========================================= */
+
+.password-label-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.password-label-row label {
+
+    margin-bottom: 9px;
+
+}
+
+
+.forgot-password {
+
+    margin-bottom: 9px;
+
+    padding: 0;
+
+    color: var(--cyan);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+}
+
+
+.forgot-password:hover {
+
+    color: var(--cyan-light);
+
+}
+
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.input-icon {
+
+    position: absolute;
+
+    left: 17px;
+
+    z-index: 2;
+
+    color: #66818f;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 55px;
+
+    padding:
+        0 50px;
+
+    border:
+        1px solid
+        rgba(130, 167, 182, 0.16);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        var(--input-bg);
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #526a78;
+
+}
+
+
+.input-wrapper input:hover {
+
+    border-color:
+        rgba(130, 167, 182, 0.27);
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color:
+        rgba(85, 200, 216, 0.75);
+
+    background:
+        rgba(85, 200, 216, 0.035);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(85, 200, 216, 0.07);
+
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+   ========================================= */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 15px;
+
+    padding: 5px;
+
+    color: #708996;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.password-toggle:hover {
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================
+   REMEMBER
+   ========================================= */
+
+.remember-row {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    color: #78909d;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+}
+
+
+.remember-row input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.custom-checkbox {
+
+    width: 17px;
+
+    height: 17px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(130, 167, 182, 0.3);
+
+    border-radius: 4px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+}
+
+
+.remember-row input:checked
++ .custom-checkbox {
+
+    border-color:
+        var(--cyan);
+
+    background:
+        var(--cyan);
+
+}
+
+
+.remember-row input:checked
++ .custom-checkbox::after {
+
+    content: "✓";
+
+    color: var(--navy-950);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================
+   MESSAGE
+   ========================================= */
+
+.login-message {
+
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    color: var(--danger);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+.patient-login-button {
+
+    width: 100%;
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 19px 0 22px;
+
+    margin-top: 5px;
+
+    border-radius: 11px;
+
+    background:
+        var(--cyan);
+
+    color:
+        var(--navy-950);
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 850;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.patient-login-button strong {
+
+    font-size: 21px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+}
+
+
+.patient-login-button:hover {
+
+    background:
+        var(--cyan-light);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(85, 200, 216, 0.16);
+
+}
+
+
+.patient-login-button:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+.patient-login-button:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================
+   CARD FOOTER
+   ========================================= */
+
+.login-card-footer {
+
+    margin-top: 34px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(130, 167, 182, 0.09);
+
+}
+
+
+.back-to-medico {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #657d8a;
+
+    font-size: 10px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.back-to-medico span {
+
+    font-size: 14px;
+
+}
+
+
+.back-to-medico:hover {
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================
+   LARGE TABLET
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+    .patient-login-wrapper {
+
+        grid-template-columns:
+            minmax(320px, 0.8fr)
+            minmax(430px, 1.2fr);
+
+    }
+
+
+    .patient-intro-content {
+
+        padding:
+            42px 45px;
+
+    }
+
+
+    .patient-intro-text h1 {
+
+        font-size:
+            clamp(42px, 5vw, 62px);
+
+    }
+
+
+    .patient-login-section {
+
+        padding: 35px;
+
+    }
+
+
+    .patient-login-card {
+
+        padding: 38px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .patient-login-wrapper {
+
+        display: block;
+
+    }
+
+
+    .patient-login-intro {
+
+        min-height: auto;
+
+    }
+
+
+    .patient-intro-content {
+
+        min-height: auto;
+
+        padding:
+            35px 30px
+            55px;
+
+    }
+
+
+    .patient-portal-label {
+
+        margin-top: 45px;
+
+    }
+
+
+    .patient-intro-text {
+
+        padding:
+            60px 0 20px;
+
+    }
+
+
+    .patient-intro-text h1 {
+
+        font-size:
+            clamp(40px, 9vw, 58px);
+
+        letter-spacing: -2.5px;
+
+    }
+
+
+    .intro-description {
+
+        max-width: 550px;
+
+    }
+
+
+    .patient-intro-footer {
+
+        margin-top: 30px;
+
+    }
+
+
+    .patient-login-section {
+
+        min-height: auto;
+
+        padding:
+            55px 25px 70px;
+
+    }
+
+
+    .patient-login-card {
+
+        width: min(100%, 500px);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .patient-intro-content {
+
+        padding:
+            28px 22px
+            45px;
+
+    }
+
+
+    .patient-logo {
+
+        font-size: 25px;
+
+    }
+
+
+    .patient-portal-label {
+
+        margin-top: 35px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .patient-intro-text {
+
+        padding:
+            50px 0 15px;
+
+    }
+
+
+    .intro-small {
+
+        font-size: 9px;
+
+    }
+
+
+    .patient-intro-text h1 {
+
+        font-size: 39px;
+
+        line-height: 1.02;
+
+        letter-spacing: -1.8px;
+
+    }
+
+
+    .intro-description {
+
+        margin-top: 24px;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+
+    }
+
+
+    .patient-intro-footer {
+
+        font-size: 8px;
+
+        letter-spacing: 1.2px;
+
+    }
+
+
+    .patient-login-section {
+
+        padding:
+            35px 15px
+            50px;
+
+    }
+
+
+    .patient-login-card {
+
+        padding:
+            30px 22px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .login-card-header {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .login-card-header h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .login-card-header p {
+
+        font-size: 12px;
+
+    }
+
+
+    .input-wrapper input {
+
+        height: 52px;
+
+    }
+
+
+    .patient-login-button {
+
+        height: 53px;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 350px) {
+
+    .patient-intro-text h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .patient-login-card {
+
+        padding:
+            26px 18px;
+
+    }
+
+
+    .password-label-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 2px;
+
+    }
+
+
+    .password-label-row label {
+
+        margin-bottom: 0;
+
+    }
+
+
+    .forgot-password {
+
+        margin-bottom: 8px;
+
+    }
+
+}
